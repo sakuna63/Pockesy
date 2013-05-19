@@ -17,8 +17,19 @@ for (var i = 0; i < content.length; i++) {
 
 	// ボタンを挿入
 	var div = document.createElement('div');
-	div.setAttribute('style', 'right: 20px; float: right; position: relative; bottom: 33px;');
-	div.innerHTML = '<a href="https://getpocket.com/save" class="pocket-btn" data-lang="en" data-save-url="'+ url +'" data-pocket-count="vertical" data-pocket-align="left" ></a>';
+	var fb_btn = art.getElementsByClassName('fb-like').item(0);
+	console.log(fb_btn);
+
+	if ( art.id === 'main'){
+		div.setAttribute('style', 'float: right; position: relative; right: 8px; bottom: 33px;');
+		div.innerHTML = '<a href="https://getpocket.com/save" class="pocket-btn" data-lang="en" data-save-url="'+ url +'" data-pocket-count="vertical" data-pocket-align="left" ></a>';
+	}
+	else{
+		div.setAttribute('style', 'position: relative; left: 18px; bottom: 35px;');
+		fb_btn.setAttribute('style', 'top: 8px; right: 35px;')
+		div.innerHTML = '<a href="https://getpocket.com/save" class="pocket-btn" data-lang="en" data-save-url="'+ url +'" data-pocket-count="horizontal" data-pocket-align="left" ></a>';
+	}
+
 	art.appendChild(div);
 };
 
